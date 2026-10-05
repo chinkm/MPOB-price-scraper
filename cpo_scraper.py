@@ -1,7 +1,6 @@
 import pywhatkit as pwk
 import keyboard
 from datetime import datetime, timedelta, date
-import datetime
 import requests
 import os
 from bs4 import BeautifulSoup as bs
