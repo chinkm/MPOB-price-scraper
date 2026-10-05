@@ -33,8 +33,7 @@ manual step from someone's day, permanently.
 The MPOB daily price pages follow a predictable URL pattern:
 
     https://price.mpob.gov.my/dailys/mas_cpo/<DD>/<MM>/<YYYY>   (CPO)
-    https://price.mpob.gov.my/dailys/ffb/<DD>/<MM>/<YYYY>       (FFB)
-
+    
 The script builds these URLs from `datetime.date.today()`, fetches the pages
 with `requests`, and parses the price table with BeautifulSoup. It then
 locates the row corresponding to the current day of the month and extracts
@@ -46,6 +45,13 @@ WhatsApp delivery uses `pywhatkit.sendwhatmsg_to_group()`, which opens
 WhatsApp Web, types the message into the specified group, and presses Enter.
 A `keyboard.press_and_release('enter')` call after the send acts as a
 safety net for cases where the default delay is too short.
+
+**Configuration**
+
+The WhatsApp group ID is read from an environment variable
+(`WHATSAPP_GROUP_ID`) rather than hardcoded, so the same script can be
+deployed in different environments without exposing sensitive identifiers.
+
 
 **Error handling**
 
@@ -75,3 +81,24 @@ a page change, a missing price — does not crash the scheduled run.
 - **pywhatkit** — WhatsApp Web automation
 - **keyboard** — Keypress automation for message send
 - **datetime** — Date arithmetic for URL and message construction
+
+## How to run
+
+```bash
+pip install requests beautifulsoup4 pywhatkit keyboard
+
+python cpo_scraper.py
+```
+## What I'd do differently today
+Written in 2022. If rebuilt today, I would use the WhatsApp Business API 
+instead of browser automation, and add schema validation to the HTML parsing 
+step.
+
+## About
+
+Built by Chin Kee Ming — Python developer with 30 years of financial and 
+plantation accounting experience.
+LinkedIn: www.linkedin.com/in/chin-kee-ming-588685148
+Portfolio: https://github.com/chinkm/MPOB-price-scraper.git
+
+
