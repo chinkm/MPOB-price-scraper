@@ -12,7 +12,6 @@ WHATSAPP_GROUP_ID = os.environ.get("WHATSAPP_GROUP_ID")
 datetime_object = str(date.today()).split("-")
 convertedDate = f"{datetime_object[-1]}/{datetime_object[-2]}/{datetime_object[-3]}"
 
-URL  = f"https://price.mpob.gov.my/dailys/ffb/{convertedDate}"       # FFB
 URL2 = f"https://price.mpob.gov.my/dailys/mas_cpo/{convertedDate}"   # CPO
 
 varCPOPrice = requests.get(URL2)
