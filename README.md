@@ -26,6 +26,15 @@ task that will eventually be forgotten, delayed, or done incorrectly. The
 value of this script is not in its complexity; it's in removing a recurring
 manual step from someone's day, permanently.
 
+## Note on FFB prices
+
+The original version of this script also scraped FFB (Fresh Fruit Bunch)
+prices from MPOB. Starting in 2025, MPOB added authentication to the FFB
+price page, requiring a login to view it. Because automated login would
+violate MPOB's terms of use, the FFB portion was removed from this script.
+The CPO price page remains publicly accessible, so this script focuses on
+CPO only.
+
 ## Technical details
 
 **Scraping logic**
@@ -90,9 +99,10 @@ pip install requests beautifulsoup4 pywhatkit keyboard
 python cpo_scraper.py
 ```
 ## What I'd do differently today
-Written in 2022. If rebuilt today, I would use the WhatsApp Business API 
-instead of browser automation, and add schema validation to the HTML parsing 
-step.
+Written in 2022. The FFB portion was removed in 2025 when MPOB added
+authentication to that page. If rebuilt today, I would use the WhatsApp
+Business API instead of browser automation, and add schema validation to
+the HTML parsing step.
 
 ## About
 
