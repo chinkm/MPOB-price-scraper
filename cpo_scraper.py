@@ -4,7 +4,6 @@ from datetime import datetime, timedelta, date
 import datetime
 import requests
 import os
-import sys
 from bs4 import BeautifulSoup as bs
 
 # Safely manage authorization or group identifiers via Environment variables
@@ -13,8 +12,8 @@ WHATSAPP_GROUP_ID = os.environ.get("WHATSAPP_GROUP_ID")
 datetime_object = str(date.today()).split("-")
 convertedDate = f"{datetime_object[-1]}/{datetime_object[-2]}/{datetime_object[-3]}"
 
-URL = f"https://mpob.gov.my{convertedDate}"        # FFB Price
-URL2 = f"https://mpob.gov.my{convertedDate}"   # CPO Price
+URL  = f"https://price.mpob.gov.my/dailys/ffb/{convertedDate}"       # FFB
+URL2 = f"https://price.mpob.gov.my/dailys/mas_cpo/{convertedDate}"   # CPO
 
 varCPOPrice = requests.get(URL2)
 soup = bs(varCPOPrice.content, "html.parser")
