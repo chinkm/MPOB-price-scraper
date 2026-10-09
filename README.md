@@ -108,7 +108,7 @@ the HTML parsing step.
 
 Built by Chin Kee Ming — Python developer with 30 years of financial and 
 plantation accounting experience.
-LinkedIn: www.linkedin.com/in/chin-kee-ming-588685148
-Portfolio: https://github.com/chinkm/MPOB-price-scraper.git
+🔗 [LinkedIn](https://www.linkedin.com/in/chin-kee-ming-588685148)
+💻 [GitHub](https://github.com/chinkm/MPOB-price-scraper)
 
 
